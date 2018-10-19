@@ -40,4 +40,15 @@ attr_accessor :title, :price
       SqlRunner.run(sql, values)
     end
 
+    def update()
+      sql = " UPDATE films SET (
+      title,
+      price
+      )=
+      ($1, $2)
+      WHERE id = $3"
+      values = [@title, @price, @id]
+      Sql runner.run(sql, values)
+    end
+
 end
