@@ -34,7 +34,7 @@ attr_accessor :title, :price
       return result
     end
 
-    def self.delete()
+    def self.delete_all()
       sql = "DELETE FROM films"
       values = []
       SqlRunner.run(sql, values)
@@ -48,7 +48,7 @@ attr_accessor :title, :price
       ($1, $2)
       WHERE id = $3"
       values = [@title, @price, @id]
-      Sql runner.run(sql, values)
+      SqlRunner.run(sql, values)
     end
 
 end

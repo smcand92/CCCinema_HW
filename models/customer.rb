@@ -35,7 +35,7 @@ class Customer
         return result
       end
 
-      def self.delete()
+      def self.delete_all()
         sql = "DELETE FROM customers"
         values = []
         SqlRunner.run(sql, values)
@@ -49,6 +49,6 @@ class Customer
         ($1, $2)
         WHERE id = $3"
         values = [@name, @funds, @id]
-        Sql runner.run(sql, values)
+        SqlRunner.run(sql, values)
       end
 end
